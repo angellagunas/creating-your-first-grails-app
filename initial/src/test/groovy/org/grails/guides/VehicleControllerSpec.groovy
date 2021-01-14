@@ -49,32 +49,6 @@ class VehicleControllerSpec extends Specification implements ControllerUnitTest<
         flash.message != null
     }
 
-    void "Test the show action with a null id"() {
-        given:
-        controller.vehicleService = Mock(VehicleService) {
-            1 * get(null) >> null
-        }
-
-        when:"The show action is executed with a null domain"
-        controller.show(null)
-
-        then:"A 404 error is returned"
-        response.status == 404
-    }
-
-    void "Test the show action with a valid id"() {
-        given:
-        controller.vehicleService = Mock(VehicleService) {
-            1 * get(2) >> new Vehicle()
-        }
-
-        when:"A domain instance is passed to the show action"
-        controller.show(2)
-
-        then:"A model is populated containing the domain instance"
-        model.vehicle instanceof Vehicle
-    }
-
     void "Test the edit action with a null id"() {
         given:
         controller.vehicleService = Mock(VehicleService) {
