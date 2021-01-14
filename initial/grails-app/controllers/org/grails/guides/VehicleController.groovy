@@ -3,9 +3,18 @@ package org.grails.guides
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
+import grails.gorm.transactions.ReadOnly
+import grails.gorm.transactions.Transactional
+
+@SuppressWarnings('LineLength')
+@ReadOnly
 class VehicleController {
 
     VehicleService vehicleService
+
+    static namespace = 'scaffolding'
+
+    def valueEstimateService //<1>
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -14,8 +23,8 @@ class VehicleController {
         respond vehicleService.list(params), model:[vehicleCount: vehicleService.count()]
     }
 
-    def show(Long id) {
-        respond vehicleService.get(id)
+    def show(Vehicle vehicle) {
+        respond vehicle, model: [estimatedValue: valueEstimateService.getEstimate(vehicle)]
     }
 
     def create() {
