@@ -1,9 +1,9 @@
 package org.grails.guides
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class ModelSpec extends Specification implements DomainUnitTest<Model> {
+class ModelControllerSpec extends Specification implements ControllerUnitTest<ModelController> {
 
     def setup() {
     }

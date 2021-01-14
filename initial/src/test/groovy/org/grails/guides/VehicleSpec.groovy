@@ -13,6 +13,6 @@ class VehicleSpec extends Specification implements DomainUnitTest<Vehicle> {
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }

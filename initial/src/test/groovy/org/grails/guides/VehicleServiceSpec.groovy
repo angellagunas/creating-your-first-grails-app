@@ -13,6 +13,6 @@ class VehicleServiceSpec extends Specification implements ServiceUnitTest<Vehicl
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }

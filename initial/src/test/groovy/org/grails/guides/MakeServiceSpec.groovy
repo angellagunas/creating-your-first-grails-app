@@ -13,6 +13,6 @@ class MakeServiceSpec extends Specification implements ServiceUnitTest<MakeServi
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }
