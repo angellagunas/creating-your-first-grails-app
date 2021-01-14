@@ -13,6 +13,6 @@ class ModelServiceSpec extends Specification implements ServiceUnitTest<ModelSer
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }

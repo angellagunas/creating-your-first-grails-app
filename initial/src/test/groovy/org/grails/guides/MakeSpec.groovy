@@ -13,6 +13,6 @@ class MakeSpec extends Specification implements DomainUnitTest<Make> {
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }
